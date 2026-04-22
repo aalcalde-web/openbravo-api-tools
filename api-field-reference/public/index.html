@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Field Reference</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h1>API Reference</h1>
+      <p>Field documentation</p>
+    </div>
+    <div class="sidebar-nav">
+      <div class="nav-item active" data-api="orders">
+        <span class="nav-icon">📦</span>
+        External Orders
+      </div>
+      <div class="nav-item" data-api="discounts">
+        <span class="nav-icon">🏷️</span>
+        External Discounts
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      Generated from source code analysis
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <span class="toolbar-title" id="toolbar-title">External Orders API</span>
+
+      <div class="filter-group">
+        <span class="filter-label">Severity</span>
+        <div class="multi-select" id="severity-select">
+          <div class="multi-select-trigger" id="severity-trigger">All</div>
+          <div class="multi-select-dropdown" id="severity-dropdown">
+            <label class="multi-select-option"><input type="checkbox" value="bug" class="sev-check"> 🔴 BUG</label>
+            <label class="multi-select-option"><input type="checkbox" value="error" class="sev-check"> ⚠️ ERROR</label>
+            <label class="multi-select-option"><input type="checkbox" value="mejorable" class="sev-check"> ℹ️ MEJORABLE</label>
+            <label class="multi-select-option"><input type="checkbox" value="ok" class="sev-check"> ✅ OK</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Endpoint</span>
+        <select class="filter-select" id="filter-endpoint">
+          <option value="ALL">All endpoints</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Section</span>
+        <select class="filter-select" id="filter-section">
+          <option value="ALL">All</option>
+          <option value="REQUEST">REQUEST</option>
+          <option value="RESPONSE">RESPONSE</option>
+        </select>
+      </div>
+
+      <span class="toolbar-spacer"></span>
+
+      <span class="badge" id="field-count">0</span> fields
+
+      <div class="export-dropdown">
+        <button class="toolbar-btn toolbar-btn-primary" id="export-btn">
+          ⬇ Export
+        </button>
+        <div class="export-menu" id="export-menu">
+          <div class="export-menu-item" id="export-csv">📄 Export as CSV</div>
+          <div class="export-menu-item" id="export-pdf">📑 Export as PDF</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content" id="content">
+      <div class="empty-state">Select an API from the sidebar</div>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
