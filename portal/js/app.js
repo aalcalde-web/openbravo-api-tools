@@ -13,13 +13,14 @@
     frame.classList.add('hidden');
     frame.src = '';
     welcome.classList.remove('hidden');
+    history.replaceState(null, '', window.location.pathname);
   }
 
   homeLink.addEventListener('click', goHome);
 
   function renderNav() {
     nav.innerHTML = PROJECTS.map(function (p) {
-      return '<div class="nav-item" data-url="' + p.url + '">' +
+      return '<div class="nav-item" data-id="' + p.id + '" data-url="' + p.url + '">' +
         '<span>' + p.icon + '</span>' + p.title +
       '</div>';
     }).join('');
@@ -33,6 +34,14 @@
     welcome.classList.add('hidden');
     frame.classList.remove('hidden');
     frame.src = item.dataset.url;
+    window.location.hash = item.dataset.id;
+  }
+
+  function loadFromHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    var item = nav.querySelector('.nav-item[data-id="' + hash + '"]');
+    if (item) loadProject(item);
   }
 
   nav.addEventListener('click', function (e) {
@@ -40,5 +49,10 @@
     if (item) loadProject(item);
   });
 
-  document.addEventListener('DOMContentLoaded', renderNav);
+  window.addEventListener('hashchange', loadFromHash);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    renderNav();
+    loadFromHash();
+  });
 })();
