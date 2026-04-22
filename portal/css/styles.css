@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --ob-green-dark: #225207;
-  --ob-green: #3A9011;
-  --ob-green-light: #7BBF58;
-  --ob-gray-dark: #505050;
-  --ob-gray: #808080;
-  --ob-gray-light: #E8E8E8;
-  --ob-blue: #2985BA;
-  --ob-text: #404040;
-  --ob-white: #FFFFFF;
-  --ob-font: Tahoma, Arial, Helvetica, sans-serif;
-  --header-height: 48px;
+  --oc-purple-dark: #482882;
+  --oc-purple: #6a3fa0;
+  --oc-purple-light: #8064A2;
+  --oc-orange: #ffbc00;
+  --oc-red: #e8005f;
+  --oc-gray-dark: #3a3a4a;
+  --oc-gray: #808090;
+  --oc-gray-light: #f0eff4;
+  --oc-text: #2e2e3e;
+  --oc-white: #FFFFFF;
+  --oc-font: 'Poppins', sans-serif;
+  --header-height: 52px;
 }
 
 * {
@@ -20,21 +23,21 @@
 
 html, body {
   height: 100%;
-  font-family: var(--ob-font);
-  color: var(--ob-text);
+  font-family: var(--oc-font);
+  color: var(--oc-text);
   overflow: hidden;
 }
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, var(--ob-green-dark), var(--ob-green));
-  color: var(--ob-white);
+  background: linear-gradient(135deg, var(--oc-purple-dark), var(--oc-purple-light));
+  color: var(--oc-white);
   height: var(--header-height);
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 24px;
   gap: 32px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(72, 40, 130, 0.3);
   position: relative;
   z-index: 10;
 }
@@ -42,11 +45,11 @@ html, body {
 .header-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-shrink: 0;
   cursor: pointer;
   text-decoration: none;
-  color: var(--ob-white);
+  color: var(--oc-white);
 }
 
 .logo-icon {
@@ -54,9 +57,9 @@ html, body {
 }
 
 .logo-title {
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0.5px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 /* Nav */
@@ -68,12 +71,12 @@ html, body {
 }
 
 .nav-item {
-  padding: 6px 16px;
+  padding: 7px 18px;
   font-size: 12px;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
   white-space: nowrap;
   transition: background 0.15s, color 0.15s;
   display: flex;
@@ -83,18 +86,19 @@ html, body {
 
 .nav-item:hover {
   background: rgba(255, 255, 255, 0.15);
-  color: var(--ob-white);
+  color: var(--oc-white);
 }
 
 .nav-item.active {
   background: rgba(255, 255, 255, 0.25);
-  color: var(--ob-white);
+  color: var(--oc-white);
 }
 
 /* Main */
 .main {
   height: calc(100% - var(--header-height));
   position: relative;
+  background: var(--oc-gray-light);
 }
 
 /* Welcome */
@@ -104,21 +108,23 @@ html, body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: var(--ob-gray);
-  gap: 12px;
+  color: var(--oc-gray);
+  gap: 14px;
 }
 
 .welcome-icon {
-  font-size: 48px;
+  font-size: 52px;
 }
 
 .welcome h2 {
-  font-size: 18px;
-  color: var(--ob-gray-dark);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--oc-purple-dark);
 }
 
 .welcome p {
   font-size: 13px;
+  font-weight: 400;
 }
 
 /* Iframe */

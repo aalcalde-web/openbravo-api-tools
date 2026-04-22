@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undocumented Fields</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <div class="api-tabs">
+        <button class="api-tab active" data-api="orders">📦 External Orders</button>
+        <button class="api-tab" data-api="discounts">🏷️ External Discounts</button>
+      </div>
+    </div>
+    <div class="toolbar-right">
+      <select class="filter-select" id="filter-endpoint">
+        <option value="ALL">All endpoints</option>
+      </select>
+      <select class="filter-select" id="filter-direction">
+        <option value="ALL">All directions</option>
+      </select>
+      <select class="filter-select" id="filter-level">
+        <option value="ALL">All levels</option>
+      </select>
+      <input class="search-input" id="search" type="text" placeholder="Search fields...">
+      <button class="btn-clear" id="clear-filters" title="Clear all filters">✕</button>
+      <span class="badge" id="count">0</span>
+      <button class="btn-export" id="export-csv">⬇ CSV</button>
+      <button class="btn-export btn-export-pdf" id="export-pdf">⬇ PDF</button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table class="data-table">
+      <colgroup>
+        <col class="col-endpoint">
+        <col class="col-direction">
+        <col class="col-level">
+        <col class="col-path">
+        <col class="col-type">
+        <col class="col-description">
+        <col class="col-how">
+        <col class="col-ref">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Endpoint</th>
+          <th>Dir</th>
+          <th>Level</th>
+          <th>Field Path</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>How it works</th>
+          <th>Code Ref</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
