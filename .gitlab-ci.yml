@@ -1,0 +1,21 @@
+image: python:3.12-slim
+
+pages:
+  stage: deploy
+  script:
+    # Generate API field data
+    - python3 api-field-reference/generate.py
+
+    # Assemble site
+    - mkdir -p public/portal
+    - cp -r portal/* public/portal/
+    - mkdir -p public/api-field-reference/public
+    - cp -r api-field-reference/public/* public/api-field-reference/public/
+
+    # Redirect root to portal
+    - echo '<meta http-equiv="refresh" content="0;url=portal/">' > public/index.html
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
