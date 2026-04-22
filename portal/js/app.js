@@ -5,6 +5,7 @@
   var frame = document.getElementById('content-frame');
   var welcome = document.getElementById('welcome');
   var homeLink = document.getElementById('home-link');
+  var menuToggle = document.getElementById('menu-toggle');
 
   function goHome() {
     document.querySelectorAll('.nav-item').forEach(function (el) {
@@ -35,6 +36,7 @@
     frame.classList.remove('hidden');
     frame.src = item.dataset.url;
     window.location.hash = item.dataset.id;
+    nav.classList.remove('open');
   }
 
   function loadFromHash() {
@@ -54,5 +56,12 @@
   document.addEventListener('DOMContentLoaded', function () {
     renderNav();
     loadFromHash();
+    menuToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+    document.addEventListener('click', function () {
+      nav.classList.remove('open');
+    });
   });
 })();

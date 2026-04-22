@@ -137,3 +137,64 @@ html, body {
 .hidden {
   display: none;
 }
+
+/* Menu toggle (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--oc-white);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .header {
+    padding: 0 12px;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .logo-title { display: none; }
+
+  .logo-icon { font-size: 26px; }
+
+  .menu-toggle { display: block; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
+    background: var(--oc-purple-dark);
+    flex-direction: column;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(72, 40, 130, 0.3);
+    z-index: 20;
+  }
+
+  .nav.open { display: flex; }
+
+  .nav-item {
+    padding: 12px 20px;
+    border-radius: 0;
+    font-size: 14px;
+  }
+
+  .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-item.active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
