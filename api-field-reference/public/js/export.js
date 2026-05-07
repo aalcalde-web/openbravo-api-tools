@@ -29,9 +29,9 @@ window.AppExport = (function() {
     }
 
     var sevColor = function(s) {
-      if (s === 'bug') return '#c0392b';
-      if (s === 'error') return '#856404';
-      if (s === 'mejorable') return '#4a4a8a';
+      if (s === 'bug') return '#e8005f';
+      if (s === 'error') return '#e65100';
+      if (s === 'mejorable') return '#482882';
       return '#27ae60';
     };
 
@@ -42,6 +42,10 @@ window.AppExport = (function() {
       return 'OK';
     };
 
+    var esc = function(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
+
     var currentGroup = '';
     var tableRows = '';
 
@@ -50,47 +54,63 @@ window.AppExport = (function() {
       if (group !== currentGroup) {
         if (currentGroup) tableRows += '</tbody></table><br>';
         currentGroup = group;
-        tableRows += '<h3 style="margin:16px 0 8px;color:#2c3e50">' + group + '</h3>';
-        tableRows += '<table style="width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed">';
+        tableRows += '<h3>' + esc(group) + '</h3>';
+        tableRows += '<table>';
         tableRows += '<colgroup>';
-        tableRows += '<col style="width:75px">';
-        tableRows += '<col style="width:120px">';
-        tableRows += '<col style="width:180px">';
-        tableRows += '<col style="width:70px">';
-        tableRows += '<col>';
-        tableRows += '<col>';
+        tableRows += '<col class="col-sev">';
+        tableRows += '<col class="col-name">';
+        tableRows += '<col class="col-path">';
+        tableRows += '<col class="col-type">';
+        tableRows += '<col class="col-desc">';
+        tableRows += '<col class="col-code">';
         tableRows += '</colgroup>';
-        tableRows += '<thead><tr style="background:#2c3e50;color:#fff">';
-        tableRows += '<th style="padding:6px 8px;text-align:left">Severity</th>';
-        tableRows += '<th style="padding:6px 8px;text-align:left">Name</th>';
-        tableRows += '<th style="padding:6px 8px;text-align:left">Field Path</th>';
-        tableRows += '<th style="padding:6px 8px;text-align:left">Type</th>';
-        tableRows += '<th style="padding:6px 8px;text-align:left">Swagger Description</th>';
-        tableRows += '<th style="padding:6px 8px;text-align:left">Code Description</th>';
+        tableRows += '<thead><tr>';
+        tableRows += '<th>Severity</th>';
+        tableRows += '<th>Name</th>';
+        tableRows += '<th>Field Path</th>';
+        tableRows += '<th>Type</th>';
+        tableRows += '<th>Swagger Description</th>';
+        tableRows += '<th>Code Description</th>';
         tableRows += '</tr></thead><tbody>';
       }
-      var swaggerDesc = f.swaggerDesc.length > 150 ? f.swaggerDesc.substring(0, 150) + '...' : f.swaggerDesc;
-      var codeDesc = f.codeDesc.length > 150 ? f.codeDesc.substring(0, 150) + '...' : f.codeDesc;
-      tableRows += '<tr style="border-bottom:1px solid #e0e0e0">';
-      tableRows += '<td style="padding:5px 8px"><span style="color:' + sevColor(f.severity) + ';font-weight:700;font-size:10px">' + sevLabel(f.severity) + '</span></td>';
-      tableRows += '<td style="padding:5px 8px;font-family:monospace;font-weight:600">' + f.name + '</td>';
-      tableRows += '<td style="padding:5px 8px;font-family:monospace;font-size:10px">' + f.path + '</td>';
-      tableRows += '<td style="padding:5px 8px;font-family:monospace;color:#61affe">' + f.type + '</td>';
-      tableRows += '<td style="padding:5px 8px;font-size:10px">' + swaggerDesc + '</td>';
-      tableRows += '<td style="padding:5px 8px;font-size:10px;color:#666;font-style:italic">' + codeDesc + '</td>';
+      tableRows += '<tr>';
+      tableRows += '<td><span class="sev" style="color:' + sevColor(f.severity) + '">' + sevLabel(f.severity) + '</span></td>';
+      tableRows += '<td class="mono bold">' + esc(f.name) + '</td>';
+      tableRows += '<td class="mono small">' + esc(f.path) + '</td>';
+      tableRows += '<td class="mono type">' + esc(f.type) + '</td>';
+      tableRows += '<td class="small">' + esc(f.swaggerDesc) + '</td>';
+      tableRows += '<td class="small italic">' + esc(f.codeDesc) + '</td>';
       tableRows += '</tr>';
     });
     if (currentGroup) tableRows += '</tbody></table>';
 
     var html = '<!DOCTYPE html><html><head>' +
-      '<title>' + apiName + ' — Field Export</title>' +
+      '<title>' + esc(apiName) + ' — Field Export</title>' +
       '<style>' +
-      'body { font-family: -apple-system, sans-serif; padding: 24px; color: #333; }' +
-      'h1 { font-size: 20px; margin-bottom: 4px; }' +
-      'h2 { font-size: 13px; color: #888; margin-bottom: 24px; font-weight: 400; }' +
-      '@media print { body { padding: 12px; } }' +
+      '@page { size: landscape; margin: 12mm; }' +
+      'body { font-family: Helvetica, Arial, sans-serif; padding: 16px; color: #2e2e3e; font-size: 9px; }' +
+      'h1 { font-size: 16px; color: #482882; margin-bottom: 2px; }' +
+      'h2 { font-size: 11px; color: #808090; margin-bottom: 20px; font-weight: 400; }' +
+      'h3 { font-size: 12px; color: #482882; margin: 14px 0 6px; }' +
+      'table { width: 100%; border-collapse: collapse; table-layout: fixed; }' +
+      '.col-sev { width: 6%; }' +
+      '.col-name { width: 10%; }' +
+      '.col-path { width: 16%; }' +
+      '.col-type { width: 6%; }' +
+      '.col-desc { width: 31%; }' +
+      '.col-code { width: 31%; }' +
+      'th { background: #482882; color: #fff; padding: 5px 6px; text-align: left; font-size: 8px; font-weight: 600; }' +
+      'td { padding: 4px 6px; border-bottom: 1px solid #e0e0e0; vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; white-space: normal; }' +
+      'tr:nth-child(even) { background: #f8f7fc; }' +
+      '.mono { font-family: Courier New, monospace; }' +
+      '.bold { font-weight: 600; }' +
+      '.small { font-size: 8px; line-height: 1.4; }' +
+      '.type { color: #8064A2; }' +
+      '.italic { color: #666; font-style: italic; }' +
+      '.sev { font-weight: 700; font-size: 8px; }' +
+      '@media print { body { padding: 0; } }' +
       '</style></head><body>' +
-      '<h1>' + apiName + '</h1>' +
+      '<h1>' + esc(apiName) + '</h1>' +
       '<h2>Exported ' + fields.length + ' fields — ' + new Date().toLocaleString() + '</h2>' +
       tableRows +
       '<script>window.onload = function() { window.print(); }<\/script>' +
