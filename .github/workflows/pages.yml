@@ -35,6 +35,8 @@ jobs:
           cp -r api-field-reference/public/* _site/api-field-reference/public/
           mkdir -p _site/undocumented-fields/public
           cp -r undocumented-fields/public/* _site/undocumented-fields/public/
+          mkdir -p _site/tools/public
+          cp -r tools/public/* _site/tools/public/
           echo '<meta http-equiv="refresh" content="0;url=portal/">' > _site/index.html
 
       - uses: actions/upload-pages-artifact@v3
