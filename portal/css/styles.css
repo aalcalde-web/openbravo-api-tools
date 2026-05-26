@@ -117,6 +117,8 @@ a.nav-item,
   cursor: pointer;
   transition: transform 0.12s, box-shadow 0.12s;
   border: 2px solid transparent;
+  text-decoration: none;
+  color: var(--oc-text);
 }
 
 .home-card:hover {
@@ -271,6 +273,8 @@ a.nav-item,
 .tag-schema { background: #e8f5e9; color: var(--oc-green); }
 .tag-js { background: #fff3e0; color: #e65100; }
 .tag-nojss { background: #fce4ec; color: var(--oc-red); }
+.tag-swagger { background: #e3f2fd; color: #1565c0; text-decoration: none; cursor: pointer; }
+.tag-swagger:hover { background: #bbdefb; }
 
 /* Run button */
 .btn-run {

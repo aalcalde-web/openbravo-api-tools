@@ -98,26 +98,24 @@
     });
   });
 
-  // --- Load APIs ---
+  // --- Load APIs (from static data) ---
   function loadApis() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', SERVERS.undocumented + '/api/apis', true);
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        allApis = JSON.parse(xhr.responseText);
-        grouped = {};
-        allApis.forEach(function (a) {
-          var cat = a.category || 'Other';
-          if (!grouped[cat]) grouped[cat] = { icon: a.categoryIcon || '📄', apis: [] };
-          grouped[cat].apis.push(a);
-        });
-        renderCategories();
-      }
-    };
-    xhr.onerror = function () {
-      catSelect.innerHTML = '<option value="">⚠️ Servidor no disponible</option>';
-    };
-    xhr.send();
+    if (typeof API_DATA !== 'undefined' && API_DATA.length > 0) {
+      allApis = API_DATA;
+      groupApis();
+      renderCategories();
+    } else {
+      catSelect.innerHTML = '<option value="">⚠️ No hay datos de APIs</option>';
+    }
+  }
+
+  function groupApis() {
+    grouped = {};
+    allApis.forEach(function (a) {
+      var cat = a.category || 'Other';
+      if (!grouped[cat]) grouped[cat] = { icon: a.categoryIcon || '📄', apis: [] };
+      grouped[cat].apis.push(a);
+    });
   }
 
   function renderCategories() {
@@ -169,6 +167,7 @@
     var tags = '';
     tags += api.hasSections ? '<span class="tag tag-schema">✓ Schemas YAML</span>' : '<span class="tag tag-nojss">✗ Sin schemas</span>';
     tags += api.hasJsSources ? '<span class="tag tag-js">✓ Fuentes JS</span>' : '<span class="tag tag-nojss">✗ Sin fuentes JS</span>';
+    if (api.swaggerUrl) tags += '<a class="tag tag-swagger" href="' + api.swaggerUrl + '" target="_blank">📖 Swagger ↗</a>';
     infoTags.innerHTML = tags;
     apiInfo.classList.remove('hidden');
     checkReady();
@@ -239,7 +238,7 @@
     xhr.onerror = function () {
       btnRun.disabled = false;
       statusEl.classList.add('hidden');
-      showError('No se pudo conectar al servidor');
+      showError('Servidor de análisis no disponible. Ejecuta ./start.sh en local para usar esta herramienta.');
     };
     xhr.send();
   });

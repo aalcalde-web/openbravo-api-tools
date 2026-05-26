@@ -37,6 +37,10 @@ jobs:
           cp -r undocumented-fields/public/* _site/undocumented-fields/public/
           mkdir -p _site/tools/public
           cp -r tools/public/* _site/tools/public/
+          mkdir -p _site/get-to-post-converter/public
+          cp -r get-to-post-converter/public/* _site/get-to-post-converter/public/
+          mkdir -p _site/get-to-post-converter/data
+          cp get-to-post-converter/data/schemas.json _site/get-to-post-converter/data/
           echo '<meta http-equiv="refresh" content="0;url=portal/">' > _site/index.html
 
       - uses: actions/upload-pages-artifact@v3

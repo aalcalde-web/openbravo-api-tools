@@ -74,6 +74,28 @@ def _find_section_files(api_dir):
     return [f for f in os.listdir(sections_dir) if f.endswith('.yml')]
 
 
+def _find_api_dirs(module_path):
+    """Find all api/doc or api/ directories within a module."""
+    api_dirs = []
+    # Classic location: module/api/
+    classic = os.path.join(module_path, 'api')
+    if os.path.isdir(classic):
+        api_dirs.append(classic)
+    # New location: module/src/**/api/doc/
+    src_dir = os.path.join(module_path, 'src')
+    if os.path.isdir(src_dir):
+        for root, dirs, files in os.walk(src_dir):
+            dirs[:] = [d for d in dirs if d not in ('node_modules', '.git', '__test__')]
+            if os.path.basename(root) == 'doc' and os.path.basename(os.path.dirname(root)) == 'api':
+                api_dirs.append(root)
+            elif os.path.basename(root) == 'api' and 'doc' not in dirs:
+                # api/ without doc/ subfolder
+                has_yml = any(f.endswith('.yml') for f in files)
+                if has_yml:
+                    api_dirs.append(root)
+    return api_dirs
+
+
 def discover_apis():
     """
     Scan the Openbravo source tree and return all discovered APIs.
@@ -81,38 +103,38 @@ def discover_apis():
     """
     apis = []
 
-    # 1. Scan modules/*/api/
+    # 1. Scan modules
     modules_dir = os.path.join(OB_ROOT, 'modules')
     if os.path.isdir(modules_dir):
         for module_name in sorted(os.listdir(modules_dir)):
             module_path = os.path.join(modules_dir, module_name)
-            api_dir = os.path.join(module_path, 'api')
-            if not os.path.isdir(api_dir):
+            if not os.path.isdir(module_path):
                 continue
 
-            # Find main YAML files (not in sections/)
-            main_yamls = [f for f in os.listdir(api_dir)
-                          if f.endswith('.yml') and os.path.isfile(os.path.join(api_dir, f))]
+            for api_dir in _find_api_dirs(module_path):
+                # Find main YAML files (not in sections/)
+                main_yamls = [f for f in os.listdir(api_dir)
+                              if f.endswith('.yml') and os.path.isfile(os.path.join(api_dir, f))]
 
-            for yml_file in main_yamls:
-                api_name = _extract_api_name(yml_file)
-                key = f"{module_name}::{api_name}".replace(' ', '_')
-                category = _categorize_module(module_name)
-                section_files = _find_section_files(api_dir)
-                js_dirs = _find_js_dirs(module_path)
+                for yml_file in main_yamls:
+                    api_name = _extract_api_name(yml_file)
+                    key = f"{module_name}::{api_name}".replace(' ', '_')
+                    category = _categorize_module(module_name)
+                    section_files = _find_section_files(api_dir)
+                    js_dirs = _find_js_dirs(module_path)
 
-                apis.append({
-                    'key': key,
-                    'label': api_name,
-                    'module': module_name,
-                    'category': category,
-                    'main_yaml': os.path.join(api_dir, yml_file),
-                    'yaml_dir': os.path.join(api_dir, 'sections'),
-                    'yaml_sections': section_files,
-                    'js_dirs': [os.path.join(module_path, d) for d in js_dirs],
-                    'module_path': module_path,
-                    'available': True,
-                })
+                    apis.append({
+                        'key': key,
+                        'label': api_name,
+                        'module': module_name,
+                        'category': category,
+                        'main_yaml': os.path.join(api_dir, yml_file),
+                        'yaml_dir': os.path.join(api_dir, 'sections'),
+                        'yaml_sections': section_files,
+                        'js_dirs': [os.path.join(module_path, d) for d in js_dirs],
+                        'module_path': module_path,
+                        'available': True,
+                    })
 
     # 2. Scan root api/ folder
     root_api_dir = os.path.join(OB_ROOT, 'api')

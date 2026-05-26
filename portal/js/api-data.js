@@ -1,0 +1,222 @@
+var API_DATA = [
+  {
+    "key": "com.openbravo.weldom.api.customizations::UpdateBusinessPartnerSearchKey",
+    "label": "UpdateBusinessPartnerSearchKey",
+    "module": "com.openbravo.weldom.api.customizations",
+    "category": "Custom",
+    "categoryIcon": "🔧",
+    "available": true,
+    "hasJsSources": false,
+    "hasSections": false,
+    "swaggerUrl": ""
+  },
+  {
+    "key": "com.openbravo.weldom.api.customizations::UpdateContact",
+    "label": "UpdateContact",
+    "module": "com.openbravo.weldom.api.customizations",
+    "category": "Custom",
+    "categoryIcon": "🔧",
+    "available": true,
+    "hasJsSources": false,
+    "hasSections": false,
+    "swaggerUrl": ""
+  },
+  {
+    "key": "org.openbravo.core2::Client_API_-_Common_Messages",
+    "label": "Client API - Common Messages",
+    "module": "org.openbravo.core2",
+    "category": "Core APIs",
+    "categoryIcon": "⚙️",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.core2-Client API - Common Messages.yml"
+  },
+  {
+    "key": "org.openbravo.events.discounts::Client_API_-_External_discounts",
+    "label": "Client API - External discounts",
+    "module": "org.openbravo.events.discounts",
+    "category": "Client APIs (Events)",
+    "categoryIcon": "⚡",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.events.discounts-Client API - External discounts.yml"
+  },
+  {
+    "key": "org.openbravo.events.orders::Client_API_REST_-_External_orders",
+    "label": "Client API REST - External orders",
+    "module": "org.openbravo.events.orders",
+    "category": "Client APIs (Events)",
+    "categoryIcon": "⚡",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.events.orders-Client API REST - External orders.yml"
+  },
+  {
+    "key": "org.openbravo.events.orders::Client_API_-_External_orders",
+    "label": "Client API - External orders",
+    "module": "org.openbravo.events.orders",
+    "category": "Client APIs (Events)",
+    "categoryIcon": "⚡",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.events.orders-Client API - External orders.yml"
+  },
+  {
+    "key": "org.openbravo.events.payment::Client_API_-_Payments",
+    "label": "Client API - Payments",
+    "module": "org.openbravo.events.payment",
+    "category": "Client APIs (Events)",
+    "categoryIcon": "⚡",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.events.payment-Client API - Payments.yml"
+  },
+  {
+    "key": "org.openbravo.events.productactivation::Client_API_-_Product_activation",
+    "label": "Client API - Product activation",
+    "module": "org.openbravo.events.productactivation",
+    "category": "Client APIs (Events)",
+    "categoryIcon": "⚡",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.events.productactivation-Client API - Product activation.yml"
+  },
+  {
+    "key": "org.openbravo.pos2::Client_API_-_Complete_Ticket",
+    "label": "Client API - Complete Ticket",
+    "module": "org.openbravo.pos2",
+    "category": "POS2 APIs",
+    "categoryIcon": "🖥️",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.pos2-Client API - Complete Ticket.yml"
+  },
+  {
+    "key": "org.openbravo.pos2::Client_API_-_Checkout_Ticket",
+    "label": "Client API - Checkout Ticket",
+    "module": "org.openbravo.pos2",
+    "category": "POS2 APIs",
+    "categoryIcon": "🖥️",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.pos2-Client API - Checkout Ticket.yml"
+  },
+  {
+    "key": "org.openbravo.pos2::Client_API_-_External_Loyalty",
+    "label": "Client API - External Loyalty",
+    "module": "org.openbravo.pos2",
+    "category": "POS2 APIs",
+    "categoryIcon": "🖥️",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.pos2-Client API - External Loyalty.yml"
+  },
+  {
+    "key": "org.openbravo.pos2.api::Client_API_-_Open_Drawer",
+    "label": "Client API - Open Drawer",
+    "module": "org.openbravo.pos2.api",
+    "category": "POS2 APIs",
+    "categoryIcon": "🖥️",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.pos2.api-Client API - Open Drawer.yml"
+  },
+  {
+    "key": "org.openbravo.pos2.api::Draft_Orders",
+    "label": "Draft Orders",
+    "module": "org.openbravo.pos2.api",
+    "category": "POS2 APIs",
+    "categoryIcon": "🖥️",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.pos2.api-Draft Orders.yml"
+  },
+  {
+    "key": "org.openbravo.reporting.integration.retail::Reporting_API",
+    "label": "Reporting API",
+    "module": "org.openbravo.reporting.integration.retail",
+    "category": "Retail APIs",
+    "categoryIcon": "🛒",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": true,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.reporting.integration.retail-Reporting API.yml"
+  },
+  {
+    "key": "org.openbravo.retail.discounts.coupons::consumecoupons",
+    "label": "consumecoupons",
+    "module": "org.openbravo.retail.discounts.coupons",
+    "category": "Retail APIs",
+    "categoryIcon": "🛒",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.retail.discounts.coupons.api-consumecoupons.yml"
+  },
+  {
+    "key": "org.openbravo.retail.giftcards::consumegiftcards",
+    "label": "consumegiftcards",
+    "module": "org.openbravo.retail.giftcards",
+    "category": "Retail APIs",
+    "categoryIcon": "🛒",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.retail.api.giftcards-consumegiftcards.yml"
+  },
+  {
+    "key": "org.openbravo.retail.giftcards::addcreditgiftcards",
+    "label": "addcreditgiftcards",
+    "module": "org.openbravo.retail.giftcards",
+    "category": "Retail APIs",
+    "categoryIcon": "🛒",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.retail.api.giftcards-addcreditgiftcards.yml"
+  },
+  {
+    "key": "org.openbravo.retail.invoice.documentcreationservice::invoiceloader",
+    "label": "invoiceloader",
+    "module": "org.openbravo.retail.invoice.documentcreationservice",
+    "category": "Retail APIs",
+    "categoryIcon": "🛒",
+    "available": true,
+    "hasJsSources": false,
+    "hasSections": false,
+    "swaggerUrl": ""
+  },
+  {
+    "key": "org.openbravo.retail.posterminal::deduplication",
+    "label": "deduplication",
+    "module": "org.openbravo.retail.posterminal",
+    "category": "Retail APIs",
+    "categoryIcon": "🛒",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.retail.api.crmdeduplication-deduplication.yml"
+  },
+  {
+    "key": "org.openbravo.retail.posterminal::orderloader",
+    "label": "orderloader",
+    "module": "org.openbravo.retail.posterminal",
+    "category": "Retail APIs",
+    "categoryIcon": "🛒",
+    "available": true,
+    "hasJsSources": true,
+    "hasSections": false,
+    "swaggerUrl": "https://livebuilds.openbravo.com/context/retail_pos2_modules_pgsql/web/org.openbravo.service.openapi/provider/org.openbravo.retail.posterminal-orderloader.yml"
+  }
+];
