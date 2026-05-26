@@ -14,6 +14,9 @@ def parse_csv(filepath):
                 'level': row.get('Level', '').strip(),
                 'path': row.get('Field Path', '').strip(),
                 'name': row.get('Field Name', '').strip(),
+                'value': row.get('Value', '').strip(),
+                'risk': row.get('Risk', '').strip(),
+                'recommendation': row.get('Recommendation', '').strip(),
                 'type': row.get('Type', '').strip(),
                 'description': row.get('Description', '').strip(),
                 'howItWorks': row.get('How it works', '').strip(),
@@ -25,8 +28,8 @@ if __name__ == '__main__':
     data_dir = os.path.join(SCRIPT_DIR, 'data')
     out_js = os.path.join(SCRIPT_DIR, 'public', 'js', 'data.js')
 
-    orders = parse_csv(os.path.join(data_dir, 'EXTERNAL_ORDERS_API_undocumented_fields.csv'))
-    discounts = parse_csv(os.path.join(data_dir, 'EXTERNAL_DISCOUNTS_API_undocumented_fields.csv'))
+    orders = parse_csv(os.path.join(data_dir, 'EXTERNAL_ORDERS_API_undocumented_fields_analysis.csv'))
+    discounts = parse_csv(os.path.join(data_dir, 'EXTERNAL_DISCOUNTS_API_undocumented_fields_analysis.csv'))
 
     js = 'var DATA_ORDERS = %s;\n\nvar DATA_DISCOUNTS = %s;\n' % (
         json.dumps(orders, ensure_ascii=False, indent=2),

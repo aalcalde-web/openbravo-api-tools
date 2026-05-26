@@ -170,18 +170,33 @@ body {
 .data-table tbody tr:hover { background: #f5f0fa; }
 
 /* Column widths */
-.col-endpoint { width: 6%; }
-.col-direction { width: 4%; }
+.col-endpoint { width: 5%; }
+.col-direction { width: 3%; }
 .col-level { width: 5%; }
-.col-path { width: 20%; }
-.col-type { width: 5%; }
-.col-description { width: 20%; }
-.col-how { width: 26%; }
-.col-ref { width: 14%; }
+.col-path { width: 15%; }
+.col-type { width: 4%; }
+.col-value { width: 4%; }
+.col-risk { width: 12%; }
+.col-recommendation { width: 9%; }
+.col-description { width: 15%; }
+.col-how { width: 18%; }
+.col-ref { width: 10%; }
 
 .field-path { font-family: 'Courier New', monospace; font-size: 10px; color: var(--oc-purple-dark); }
 .field-type { font-family: 'Courier New', monospace; font-size: 10px; color: var(--oc-purple-light); }
 .code-ref { font-family: 'Courier New', monospace; font-size: 10px; color: #999; }
+
+.value-badge {
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.value-High { background: #e8f5e9; color: #2e7d32; }
+.value-Medium { background: #fff8e1; color: #e65100; }
+.value-Low { background: #fce4ec; color: #c62828; }
+.value-None { background: #f5f5f5; color: #9e9e9e; }
 
 .level-badge {
   font-size: 9px;

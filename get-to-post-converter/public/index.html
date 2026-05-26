@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GET → POST/PATCH Converter</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🔄 GET → POST/PATCH Converter</h1>
+      <p class="subtitle">Business API - Master Data</p>
+    </header>
+
+    <section class="config">
+      <div class="config-row">
+        <div class="field">
+          <label for="entity-select">Entidad</label>
+          <select id="entity-select">
+            <option value="">— Selecciona API —</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mode-select">Método destino</label>
+          <select id="mode-select">
+            <option value="post">POST (crear)</option>
+            <option value="patch">PATCH (actualizar)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fields-select">Campos</label>
+          <select id="fields-select">
+            <option value="all">Todos los posibles</option>
+            <option value="required">Solo obligatorios</option>
+            <option value="manual">Elegir campos</option>
+          </select>
+        </div>
+      </div>
+      <div class="entity-info hidden" id="entity-info"></div>
+    </section>
+
+    <section class="panels">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>📥 JSON del GET (input)</h2>
+          <button class="btn-small" id="btn-paste">Pegar</button>
+        </div>
+        <textarea id="input-json" placeholder="Pega aquí el JSON obtenido del GET en Swagger..."></textarea>
+      </div>
+      <div class="panel-picker hidden" id="picker-panel">
+        <div class="panel-header">
+          <h2>☑️ Campos</h2>
+        </div>
+        <div id="field-picker" class="picker-list"></div>
+      </div>
+      <div class="panel-middle">
+        <button class="btn-convert" id="btn-convert" disabled>▶ Convertir</button>
+      </div>
+      <div class="panel">
+        <div class="panel-header">
+          <h2>📤 JSON para POST/PATCH (output)</h2>
+          <button class="btn-small" id="btn-copy">Copiar</button>
+        </div>
+        <div id="output-json" class="output-area"></div>
+      </div>
+    </section>
+
+    <div class="legend">
+      <span class="legend-item"><span class="legend-bar legend-bar-id"></span> Identificador (localiza el registro)</span>
+      <span class="legend-item"><span class="legend-bar legend-bar-manual"></span> Solo existe en Import (rellenar manualmente)</span>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

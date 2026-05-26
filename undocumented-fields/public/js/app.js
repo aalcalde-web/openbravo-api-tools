@@ -46,6 +46,9 @@
       '<td><span class="level-badge level-' + r.level + '">' + esc(r.level) + '</span></td>' +
       '<td class="field-path">' + esc(r.path) + '</td>' +
       '<td class="field-type">' + esc(r.type) + '</td>' +
+      '<td><span class="value-badge value-' + r.value + '">' + esc(r.value) + '</span></td>' +
+      '<td class="cell-wrap">' + esc(r.risk) + '</td>' +
+      '<td class="cell-wrap">' + esc(r.recommendation) + '</td>' +
       '<td class="cell-wrap">' + esc(r.description) + '</td>' +
       '<td class="cell-wrap">' + esc(r.howItWorks) + '</td>' +
       '<td class="code-ref">' + esc(r.codeRef) + '</td>' +
@@ -64,7 +67,7 @@
       if (dir !== 'ALL' && r.direction !== dir) return false;
       if (lvl !== 'ALL' && r.level !== lvl) return false;
       if (q) {
-        var text = (r.path + ' ' + r.name + ' ' + r.description + ' ' + r.howItWorks + ' ' + r.codeRef).toLowerCase();
+        var text = (r.path + ' ' + r.name + ' ' + r.description + ' ' + r.howItWorks + ' ' + r.codeRef + ' ' + r.value + ' ' + r.risk + ' ' + r.recommendation).toLowerCase();
         if (text.indexOf(q) === -1) return false;
       }
       return true;
@@ -138,10 +141,13 @@
   // CSV export
   document.getElementById('export-csv').addEventListener('click', function () {
     var filtered = getFiltered();
-    var headers = ['Endpoint', 'Direction', 'Level', 'Field Path', 'Field Name', 'Type', 'Description', 'How it works', 'Code Reference'];
+    var headers = ['Endpoint', 'Direction', 'Level', 'Field Path', 'Field Name', 'Type', 'Value', 'Risk', 'Recommendation', 'Description', 'How it works', 'Code Reference'];
     var csvRows = [headers.join(',')];
     filtered.forEach(function (r) {
       csvRows.push([r.endpoint, r.direction, r.level, r.path, r.name, r.type,
+        '"' + r.value.replace(/"/g, '""') + '"',
+        '"' + r.risk.replace(/"/g, '""') + '"',
+        '"' + r.recommendation.replace(/"/g, '""') + '"',
         '"' + r.description.replace(/"/g, '""') + '"',
         '"' + r.howItWorks.replace(/"/g, '""') + '"',
         '"' + r.codeRef.replace(/"/g, '""') + '"'
@@ -163,26 +169,29 @@
     doc.setTextColor(72, 40, 130);
     doc.text('Undocumented Fields — ' + title, 14, 15);
 
-    var headers = [['Endpoint', 'Dir', 'Level', 'Field Path', 'Type', 'Description', 'How it works', 'Code Ref']];
+    var headers = [['Endpoint', 'Dir', 'Level', 'Field Path', 'Type', 'Value', 'Risk', 'Recommendation', 'Description', 'How it works', 'Code Ref']];
     var rows = filtered.map(function (r) {
-      return [r.endpoint, r.direction, r.level, r.path, r.type, r.description, r.howItWorks, r.codeRef];
+      return [r.endpoint, r.direction, r.level, r.path, r.type, r.value, r.risk, r.recommendation, r.description, r.howItWorks, r.codeRef];
     });
 
     doc.autoTable({
       head: headers,
       body: rows,
       startY: 22,
-      styles: { font: 'helvetica', fontSize: 7, cellPadding: 2 },
+      styles: { font: 'helvetica', fontSize: 6, cellPadding: 2 },
       headStyles: { fillColor: [72, 40, 130], textColor: 255, fontStyle: 'bold' },
       columnStyles: {
-        0: { cellWidth: 18 },
-        1: { cellWidth: 12 },
-        2: { cellWidth: 14 },
-        3: { cellWidth: 45 },
-        4: { cellWidth: 14 },
-        5: { cellWidth: 55 },
-        6: { cellWidth: 75 },
-        7: { cellWidth: 35 }
+        0: { cellWidth: 16 },
+        1: { cellWidth: 10 },
+        2: { cellWidth: 12 },
+        3: { cellWidth: 38 },
+        4: { cellWidth: 12 },
+        5: { cellWidth: 12 },
+        6: { cellWidth: 30 },
+        7: { cellWidth: 22 },
+        8: { cellWidth: 40 },
+        9: { cellWidth: 55 },
+        10: { cellWidth: 30 }
       },
       alternateRowStyles: { fillColor: [245, 240, 250] }
     });

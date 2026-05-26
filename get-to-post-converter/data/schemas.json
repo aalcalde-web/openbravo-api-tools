@@ -1,0 +1,3763 @@
+{
+  "Assortment": {
+    "description": "Definition of the List of Product for a store",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "products"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active",
+          "required": true
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "name",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "organization",
+          "required": true
+        },
+        {
+          "name": "products"
+        }
+      ],
+      "identifiers": [
+        "name"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "client",
+        "description",
+        "name",
+        "organization",
+        "products"
+      ]
+    }
+  },
+  "BurnRule": {
+    "description": "Rules for burning loyalty points into rewards, discounts, or gift products.",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "allowSameTransactionRedemption"
+        },
+        {
+          "name": "endDate"
+        },
+        {
+          "name": "freeProducts"
+        },
+        {
+          "name": "loyaltyProgram"
+        },
+        {
+          "name": "multiplierCoefficientForPointsCalculation"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "pointsCostCalculatedFromProductPrice"
+        },
+        {
+          "name": "startDate"
+        },
+        {
+          "name": "type"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "allowSameTransactionRedemption"
+        },
+        {
+          "name": "endDate"
+        },
+        {
+          "name": "freeProducts"
+        },
+        {
+          "name": "loyaltyProgram",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "multiplierCoefficientForPointsCalculation"
+        },
+        {
+          "name": "name",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "pointsCostCalculatedFromProductPrice"
+        },
+        {
+          "name": "startDate",
+          "required": true
+        },
+        {
+          "name": "type"
+        }
+      ],
+      "identifiers": [
+        "loyaltyProgram",
+        "name"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "allowSameTransactionRedemption",
+        "endDate",
+        "freeProducts",
+        "loyaltyProgram",
+        "multiplierCoefficientForPointsCalculation",
+        "name",
+        "pointsCostCalculatedFromProductPrice",
+        "startDate",
+        "type"
+      ]
+    }
+  },
+  "BusinessPartner": {
+    "description": "Anyone who takes part in daily business operations by acting as a customer, employee, etc",
+    "export": {
+      "fields": [
+        {
+          "name": "birthDay"
+        },
+        {
+          "name": "birthPlace"
+        },
+        {
+          "name": "bpCategory"
+        },
+        {
+          "name": "bpTaxCategory"
+        },
+        {
+          "name": "businessPartnerType"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "commercialName"
+        },
+        {
+          "name": "consentPaperInfo"
+        },
+        {
+          "name": "contactInformation"
+        },
+        {
+          "name": "creditLineLimit"
+        },
+        {
+          "name": "currency"
+        },
+        {
+          "name": "currentBalance"
+        },
+        {
+          "name": "customerBlocking"
+        },
+        {
+          "name": "customerConsent"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "fiscalName"
+        },
+        {
+          "name": "goodsReceiptBlocking"
+        },
+        {
+          "name": "greeting"
+        },
+        {
+          "name": "invoiceTerms"
+        },
+        {
+          "name": "isCustomer"
+        },
+        {
+          "name": "isVendor"
+        },
+        {
+          "name": "language"
+        },
+        {
+          "name": "locations"
+        },
+        {
+          "name": "loyaltySubscriptions"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "paymentMethod"
+        },
+        {
+          "name": "paymentOutBlocking"
+        },
+        {
+          "name": "paymentTerms"
+        },
+        {
+          "name": "poMaturityDate1"
+        },
+        {
+          "name": "poMaturityDate2"
+        },
+        {
+          "name": "poMaturityDate3"
+        },
+        {
+          "name": "poPaymentMethod"
+        },
+        {
+          "name": "poPaymentTerms"
+        },
+        {
+          "name": "priceList"
+        },
+        {
+          "name": "promotions"
+        },
+        {
+          "name": "purchaseInvoiceBlocking"
+        },
+        {
+          "name": "purchaseOrderBlocking"
+        },
+        {
+          "name": "purchasePriceList"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "taxCategory"
+        },
+        {
+          "name": "taxID"
+        },
+        {
+          "name": "transactionMinimumAmt"
+        },
+        {
+          "name": "uniqueCreditNote"
+        },
+        {
+          "name": "vendorBlocking"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "birthDay"
+        },
+        {
+          "name": "birthPlace"
+        },
+        {
+          "name": "bpCategory",
+          "required": true
+        },
+        {
+          "name": "businessPartnerType"
+        },
+        {
+          "name": "client",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "commercialName",
+          "required": true
+        },
+        {
+          "name": "contactInformation"
+        },
+        {
+          "name": "creditLineLimit"
+        },
+        {
+          "name": "currency"
+        },
+        {
+          "name": "currentBalance"
+        },
+        {
+          "name": "customerBlocking"
+        },
+        {
+          "name": "customerConsent"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "fiscalName"
+        },
+        {
+          "name": "goodsReceiptBlocking"
+        },
+        {
+          "name": "greeting"
+        },
+        {
+          "name": "invoiceTerms"
+        },
+        {
+          "name": "isCustomer"
+        },
+        {
+          "name": "isVendor"
+        },
+        {
+          "name": "organization",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "paymentMethod"
+        },
+        {
+          "name": "paymentOutBlocking"
+        },
+        {
+          "name": "paymentTerms"
+        },
+        {
+          "name": "poMaturityDate1"
+        },
+        {
+          "name": "poMaturityDate2"
+        },
+        {
+          "name": "poMaturityDate3"
+        },
+        {
+          "name": "poPaymentMethod"
+        },
+        {
+          "name": "poPaymentTerms"
+        },
+        {
+          "name": "priceList"
+        },
+        {
+          "name": "purchaseInvoiceBlocking"
+        },
+        {
+          "name": "purchaseOrderBlocking"
+        },
+        {
+          "name": "purchasePriceList"
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "taxCategory"
+        },
+        {
+          "name": "taxID"
+        },
+        {
+          "name": "transactionMinimumAmt"
+        },
+        {
+          "name": "uniqueCreditNote"
+        },
+        {
+          "name": "vendorBlocking"
+        }
+      ],
+      "identifiers": [
+        "client",
+        "organization",
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "birthDay",
+        "birthPlace",
+        "bpCategory",
+        "businessPartnerType",
+        "client",
+        "commercialName",
+        "contactInformation",
+        "creditLineLimit",
+        "currency",
+        "currentBalance",
+        "customerBlocking",
+        "customerConsent",
+        "description",
+        "fiscalName",
+        "goodsReceiptBlocking",
+        "greeting",
+        "invoiceTerms",
+        "isCustomer",
+        "isVendor",
+        "organization",
+        "paymentMethod",
+        "paymentOutBlocking",
+        "paymentTerms",
+        "poMaturityDate1",
+        "poMaturityDate2",
+        "poMaturityDate3",
+        "poPaymentMethod",
+        "poPaymentTerms",
+        "priceList",
+        "purchaseInvoiceBlocking",
+        "purchaseOrderBlocking",
+        "purchasePriceList",
+        "searchKey",
+        "taxCategory",
+        "taxID",
+        "transactionMinimumAmt",
+        "uniqueCreditNote",
+        "vendorBlocking"
+      ]
+    }
+  },
+  "Coupon": {
+    "description": "",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "breakable"
+        },
+        {
+          "name": "businessPartner"
+        },
+        {
+          "name": "couponAmount"
+        },
+        {
+          "name": "couponCode"
+        },
+        {
+          "name": "creationDate"
+        },
+        {
+          "name": "crmReference"
+        },
+        {
+          "name": "numberOfUses"
+        },
+        {
+          "name": "numberOfUsesCalculationMode"
+        },
+        {
+          "name": "numberOfUsesLimit"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "otfCouponRule"
+        },
+        {
+          "name": "promotion"
+        },
+        {
+          "name": "promotionSearchKey"
+        },
+        {
+          "name": "remainingBalance"
+        },
+        {
+          "name": "returnable"
+        },
+        {
+          "name": "salesOrder"
+        },
+        {
+          "name": "status"
+        },
+        {
+          "name": "usageStatus"
+        },
+        {
+          "name": "validFrom"
+        },
+        {
+          "name": "validTo"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "breakable"
+        },
+        {
+          "name": "businessPartner"
+        },
+        {
+          "name": "couponAmount"
+        },
+        {
+          "name": "couponCode",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "creationDate"
+        },
+        {
+          "name": "crmReference"
+        },
+        {
+          "name": "numberOfUses"
+        },
+        {
+          "name": "numberOfUsesCalculationMode"
+        },
+        {
+          "name": "numberOfUsesLimit"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "otfCouponRule"
+        },
+        {
+          "name": "remainingBalance"
+        },
+        {
+          "name": "returnable"
+        },
+        {
+          "name": "salesOrder"
+        },
+        {
+          "name": "status",
+          "required": true
+        },
+        {
+          "name": "usageStatus"
+        },
+        {
+          "name": "validFrom"
+        },
+        {
+          "name": "validTo"
+        }
+      ],
+      "identifiers": [
+        "couponCode"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "breakable",
+        "businessPartner",
+        "couponAmount",
+        "couponCode",
+        "creationDate",
+        "crmReference",
+        "numberOfUses",
+        "numberOfUsesCalculationMode",
+        "numberOfUsesLimit",
+        "organization",
+        "otfCouponRule",
+        "remainingBalance",
+        "returnable",
+        "salesOrder",
+        "status",
+        "usageStatus",
+        "validFrom",
+        "validTo"
+      ]
+    }
+  },
+  "CouponOTFRule": {
+    "description": "",
+    "export": {
+      "fields": [
+        {
+          "name": "allDays"
+        },
+        {
+          "name": "amountRule"
+        },
+        {
+          "name": "applicant"
+        },
+        {
+          "name": "applicationRule"
+        },
+        {
+          "name": "breakable"
+        },
+        {
+          "name": "businessPartnerCategories"
+        },
+        {
+          "name": "characteristics"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "couponAmount"
+        },
+        {
+          "name": "crmPropertyConditions"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "discount"
+        },
+        {
+          "name": "discountPercentage"
+        },
+        {
+          "name": "endingDate"
+        },
+        {
+          "name": "excludedCharacteristics"
+        },
+        {
+          "name": "includedBPCategories"
+        },
+        {
+          "name": "includedCharacteristics"
+        },
+        {
+          "name": "includedLoyaltyPrograms"
+        },
+        {
+          "name": "includedOrganizations"
+        },
+        {
+          "name": "includedProductCategories"
+        },
+        {
+          "name": "includedProducts"
+        },
+        {
+          "name": "isFriday"
+        },
+        {
+          "name": "isMonday"
+        },
+        {
+          "name": "isNominalCoupon"
+        },
+        {
+          "name": "isOneCouponPerTransaction"
+        },
+        {
+          "name": "isSaturday"
+        },
+        {
+          "name": "isSunday"
+        },
+        {
+          "name": "isThursday"
+        },
+        {
+          "name": "isTuesday"
+        },
+        {
+          "name": "isWednesday"
+        },
+        {
+          "name": "loyaltyPrograms"
+        },
+        {
+          "name": "maxCouponAmount"
+        },
+        {
+          "name": "minQuantity"
+        },
+        {
+          "name": "minReceiptAmount"
+        },
+        {
+          "name": "numberOfUses"
+        },
+        {
+          "name": "numberOfUsesLimit"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "organizations"
+        },
+        {
+          "name": "printTextInformation"
+        },
+        {
+          "name": "productCategories"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "requestDate"
+        },
+        {
+          "name": "returnable"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "startingDate"
+        },
+        {
+          "name": "validFromUnit"
+        },
+        {
+          "name": "validFromValue"
+        },
+        {
+          "name": "validToUnit"
+        },
+        {
+          "name": "validToValue"
+        },
+        {
+          "name": "xUnits"
+        },
+        {
+          "name": "yUnits"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "allDays",
+          "required": true
+        },
+        {
+          "name": "amountRule"
+        },
+        {
+          "name": "applicant",
+          "required": true
+        },
+        {
+          "name": "applicationRule"
+        },
+        {
+          "name": "breakable"
+        },
+        {
+          "name": "businessPartnerCategories"
+        },
+        {
+          "name": "characteristics"
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "couponAmount"
+        },
+        {
+          "name": "crmPropertyConditions"
+        },
+        {
+          "name": "description",
+          "required": true
+        },
+        {
+          "name": "discount",
+          "required": true
+        },
+        {
+          "name": "discountPercentage"
+        },
+        {
+          "name": "endingDate"
+        },
+        {
+          "name": "excludedCharacteristics",
+          "required": true
+        },
+        {
+          "name": "includedBPCategories",
+          "required": true
+        },
+        {
+          "name": "includedCharacteristics",
+          "required": true
+        },
+        {
+          "name": "includedLoyaltyPrograms",
+          "required": true
+        },
+        {
+          "name": "includedOrganizations",
+          "required": true
+        },
+        {
+          "name": "includedProductCategories",
+          "required": true
+        },
+        {
+          "name": "includedProducts",
+          "required": true
+        },
+        {
+          "name": "isFriday",
+          "required": true
+        },
+        {
+          "name": "isMonday",
+          "required": true
+        },
+        {
+          "name": "isNominalCoupon",
+          "required": true
+        },
+        {
+          "name": "isOneCouponPerTransaction",
+          "required": true
+        },
+        {
+          "name": "isSaturday",
+          "required": true
+        },
+        {
+          "name": "isSunday",
+          "required": true
+        },
+        {
+          "name": "isThursday",
+          "required": true
+        },
+        {
+          "name": "isTuesday",
+          "required": true
+        },
+        {
+          "name": "isWednesday",
+          "required": true
+        },
+        {
+          "name": "loyaltyPrograms"
+        },
+        {
+          "name": "maxCouponAmount"
+        },
+        {
+          "name": "minQuantity"
+        },
+        {
+          "name": "minReceiptAmount"
+        },
+        {
+          "name": "numberOfUses"
+        },
+        {
+          "name": "numberOfUsesLimit"
+        },
+        {
+          "name": "organization",
+          "required": true
+        },
+        {
+          "name": "organizations"
+        },
+        {
+          "name": "printTextInformation"
+        },
+        {
+          "name": "productCategories"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "requestDate",
+          "required": true
+        },
+        {
+          "name": "returnable"
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "startingDate",
+          "required": true
+        },
+        {
+          "name": "validFromUnit",
+          "required": true
+        },
+        {
+          "name": "validFromValue"
+        },
+        {
+          "name": "validToUnit",
+          "required": true
+        },
+        {
+          "name": "validToValue"
+        },
+        {
+          "name": "xUnits"
+        },
+        {
+          "name": "yUnits"
+        }
+      ],
+      "identifiers": [
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "allDays",
+        "amountRule",
+        "applicant",
+        "applicationRule",
+        "breakable",
+        "businessPartnerCategories",
+        "characteristics",
+        "client",
+        "couponAmount",
+        "crmPropertyConditions",
+        "description",
+        "discount",
+        "discountPercentage",
+        "endingDate",
+        "excludedCharacteristics",
+        "includedBPCategories",
+        "includedCharacteristics",
+        "includedLoyaltyPrograms",
+        "includedOrganizations",
+        "includedProductCategories",
+        "includedProducts",
+        "isFriday",
+        "isMonday",
+        "isNominalCoupon",
+        "isOneCouponPerTransaction",
+        "isSaturday",
+        "isSunday",
+        "isThursday",
+        "isTuesday",
+        "isWednesday",
+        "loyaltyPrograms",
+        "maxCouponAmount",
+        "minQuantity",
+        "minReceiptAmount",
+        "numberOfUses",
+        "numberOfUsesLimit",
+        "organization",
+        "organizations",
+        "printTextInformation",
+        "productCategories",
+        "products",
+        "requestDate",
+        "returnable",
+        "searchKey",
+        "startingDate",
+        "validFromUnit",
+        "validFromValue",
+        "validToUnit",
+        "validToValue",
+        "xUnits",
+        "yUnits"
+      ]
+    }
+  },
+  "GiftCard": {
+    "description": "Instances of Gift Cards",
+    "export": {
+      "fields": [
+        {
+          "name": "CRM"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "amount"
+        },
+        {
+          "name": "businessPartner"
+        },
+        {
+          "name": "cancelled"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "creationDate"
+        },
+        {
+          "name": "creationOrganization"
+        },
+        {
+          "name": "currency"
+        },
+        {
+          "name": "currentAmount"
+        },
+        {
+          "name": "dateOrdered"
+        },
+        {
+          "name": "expirationDate"
+        },
+        {
+          "name": "localCreationDate"
+        },
+        {
+          "name": "localUpdationDate"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "ownerCRM"
+        },
+        {
+          "name": "product"
+        },
+        {
+          "name": "salesOrder"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "touchpoint"
+        },
+        {
+          "name": "type"
+        },
+        {
+          "name": "updated"
+        },
+        {
+          "name": "updatedBy"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "CRM"
+        },
+        {
+          "name": "active",
+          "required": true
+        },
+        {
+          "name": "amount"
+        },
+        {
+          "name": "businessPartner",
+          "required": true
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "creationOrganization"
+        },
+        {
+          "name": "currency",
+          "required": true
+        },
+        {
+          "name": "currentAmount"
+        },
+        {
+          "name": "dateOrdered",
+          "required": true
+        },
+        {
+          "name": "expirationDate"
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "ownerCRM"
+        },
+        {
+          "name": "product"
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "type",
+          "required": true
+        }
+      ],
+      "identifiers": [
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "CRM",
+        "active",
+        "amount",
+        "businessPartner",
+        "client",
+        "creationOrganization",
+        "currency",
+        "currentAmount",
+        "dateOrdered",
+        "expirationDate",
+        "owner",
+        "ownerCRM",
+        "product",
+        "searchKey",
+        "type"
+      ]
+    }
+  },
+  "GiftCertificate": {
+    "description": "Instances of Gift Cards",
+    "export": {
+      "fields": []
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "CRM"
+        },
+        {
+          "name": "active",
+          "required": true
+        },
+        {
+          "name": "amount"
+        },
+        {
+          "name": "businessPartner",
+          "required": true
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "creationOrganization"
+        },
+        {
+          "name": "currency",
+          "required": true
+        },
+        {
+          "name": "currentAmount"
+        },
+        {
+          "name": "expirationDate"
+        },
+        {
+          "name": "externalOrderId"
+        },
+        {
+          "name": "orderDate",
+          "required": true
+        },
+        {
+          "name": "organization",
+          "required": true
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "ownerCRM"
+        },
+        {
+          "name": "reason",
+          "required": true
+        }
+      ],
+      "identifiers": []
+    },
+    "mergeable": {
+      "fields": [
+        "CRM",
+        "active",
+        "amount",
+        "businessPartner",
+        "client",
+        "creationOrganization",
+        "currency",
+        "currentAmount",
+        "expirationDate",
+        "externalOrderId",
+        "orderDate",
+        "organization",
+        "owner",
+        "ownerCRM",
+        "reason"
+      ]
+    }
+  },
+  "InvoiceLineProductBundleItem": {
+    "description": "Information about the bundle items added to the invoice line's product.",
+    "export": {
+      "fields": [
+        {
+          "name": "additionalCost"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "lineNo"
+        },
+        {
+          "name": "product"
+        },
+        {
+          "name": "productBundleCategory"
+        },
+        {
+          "name": "quantity"
+        },
+        {
+          "name": "taxes"
+        }
+      ]
+    },
+    "import": {
+      "fields": [],
+      "identifiers": []
+    },
+    "mergeable": {
+      "fields": []
+    }
+  },
+  "Organization": {
+    "description": "Basic information about organization",
+    "export": {
+      "fields": [
+        {
+          "name": "anonymousCustomer"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "groupBusinessUnit"
+        },
+        {
+          "name": "lastBusinessDate"
+        },
+        {
+          "name": "lastOpenClosedBy"
+        },
+        {
+          "name": "lastOpenClosedDate"
+        },
+        {
+          "name": "lastTouchPointStoreOpening"
+        },
+        {
+          "name": "lastTouchPointTypeStoreOpening"
+        },
+        {
+          "name": "legalName"
+        },
+        {
+          "name": "localCreationDate"
+        },
+        {
+          "name": "localUpdationDate"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "organization_info"
+        },
+        {
+          "name": "searchKey"
+        }
+      ]
+    },
+    "import": {
+      "fields": [],
+      "identifiers": []
+    },
+    "mergeable": {
+      "fields": []
+    }
+  },
+  "PriceList": {
+    "description": "List of Prices",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "basePricelist"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "costBased"
+        },
+        {
+          "name": "currency"
+        },
+        {
+          "name": "default"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "enforcePriceLimit"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "priceListVersions"
+        },
+        {
+          "name": "salesPriceList"
+        },
+        {
+          "name": "taxIncluded"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active",
+          "required": true
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "costBased",
+          "required": true
+        },
+        {
+          "name": "currency",
+          "required": true
+        },
+        {
+          "name": "default",
+          "required": true
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "enforcePriceLimit"
+        },
+        {
+          "name": "name",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "priceListVersions"
+        },
+        {
+          "name": "salesPriceList",
+          "required": true
+        },
+        {
+          "name": "taxIncluded",
+          "required": true
+        }
+      ],
+      "identifiers": [
+        "name"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "client",
+        "costBased",
+        "currency",
+        "default",
+        "description",
+        "enforcePriceLimit",
+        "name",
+        "priceListVersions",
+        "salesPriceList",
+        "taxIncluded"
+      ]
+    }
+  },
+  "Product": {
+    "description": "The Product entity represents all items managed within organizational processes and activities, including products for sale, raw materials, services, and resources.",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "aliases"
+        },
+        {
+          "name": "allowAnonymousSale"
+        },
+        {
+          "name": "allowDeferredSell"
+        },
+        {
+          "name": "alternativeUnitOfMeasure"
+        },
+        {
+          "name": "attributeSet"
+        },
+        {
+          "name": "autoGenerateBOM"
+        },
+        {
+          "name": "billOfMaterials"
+        },
+        {
+          "name": "bom"
+        },
+        {
+          "name": "calculated"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "complementaryProducts"
+        },
+        {
+          "name": "deferredSellMaxDays"
+        },
+        {
+          "name": "deliveryMode"
+        },
+        {
+          "name": "deliveryModeInLayaway"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "discontinued"
+        },
+        {
+          "name": "discontinuedBy"
+        },
+        {
+          "name": "documentNote"
+        },
+        {
+          "name": "editablePrice"
+        },
+        {
+          "name": "epc"
+        },
+        {
+          "name": "excludeRelatedProductCategories"
+        },
+        {
+          "name": "excludeRelatedProducts"
+        },
+        {
+          "name": "generic"
+        },
+        {
+          "name": "genericProduct"
+        },
+        {
+          "name": "groupedProduct"
+        },
+        {
+          "name": "isOTF"
+        },
+        {
+          "name": "linkedToProduct"
+        },
+        {
+          "name": "multiSelectable"
+        },
+        {
+          "name": "multiTaxCategory"
+        },
+        {
+          "name": "multiUPC"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "newEquivalentProduct"
+        },
+        {
+          "name": "obdestCcharacteristic"
+        },
+        {
+          "name": "obdestEnabled"
+        },
+        {
+          "name": "obdestRcharacteristic"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "overdueReturnDays"
+        },
+        {
+          "name": "pimUrl"
+        },
+        {
+          "name": "plmStatus"
+        },
+        {
+          "name": "priceRuleBased"
+        },
+        {
+          "name": "printDescription"
+        },
+        {
+          "name": "printDetailsOnInvoice"
+        },
+        {
+          "name": "printDetailsOnPickList"
+        },
+        {
+          "name": "printPrice"
+        },
+        {
+          "name": "printServices"
+        },
+        {
+          "name": "productActCategory"
+        },
+        {
+          "name": "productCategory"
+        },
+        {
+          "name": "productPurchasing"
+        },
+        {
+          "name": "productSubtype"
+        },
+        {
+          "name": "productType"
+        },
+        {
+          "name": "production"
+        },
+        {
+          "name": "productsOfTheKit"
+        },
+        {
+          "name": "proposalType"
+        },
+        {
+          "name": "purchased"
+        },
+        {
+          "name": "quantityRule"
+        },
+        {
+          "name": "quantityType"
+        },
+        {
+          "name": "quantityVariable"
+        },
+        {
+          "name": "relatableProducts"
+        },
+        {
+          "name": "relatableProductsByProductCategory"
+        },
+        {
+          "name": "relatedProductCategories"
+        },
+        {
+          "name": "relatedProducts"
+        },
+        {
+          "name": "relevantCharacteristicsFilter"
+        },
+        {
+          "name": "requestPriceOnLineCreation"
+        },
+        {
+          "name": "returnable"
+        },
+        {
+          "name": "salesUnitFactor"
+        },
+        {
+          "name": "scale"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "serviceFollowUpDocumentMode"
+        },
+        {
+          "name": "serviceFollowUpEntryMode"
+        },
+        {
+          "name": "sgtin"
+        },
+        {
+          "name": "shelfDepth"
+        },
+        {
+          "name": "shelfHeight"
+        },
+        {
+          "name": "shelfWidth"
+        },
+        {
+          "name": "showCharactDesc"
+        },
+        {
+          "name": "showStock"
+        },
+        {
+          "name": "skipApplyPromotion"
+        },
+        {
+          "name": "sku"
+        },
+        {
+          "name": "sold"
+        },
+        {
+          "name": "specialUse"
+        },
+        {
+          "name": "stocked"
+        },
+        {
+          "name": "substituteProducts"
+        },
+        {
+          "name": "summaryLevel"
+        },
+        {
+          "name": "taxCategory"
+        },
+        {
+          "name": "translations"
+        },
+        {
+          "name": "uniquePerDocument"
+        },
+        {
+          "name": "unitsPerPallet"
+        },
+        {
+          "name": "uom"
+        },
+        {
+          "name": "uomForWeight"
+        },
+        {
+          "name": "upcEAN"
+        },
+        {
+          "name": "verified"
+        },
+        {
+          "name": "versionNo"
+        },
+        {
+          "name": "volume"
+        },
+        {
+          "name": "weight"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "aliases"
+        },
+        {
+          "name": "allowAnonymousSale"
+        },
+        {
+          "name": "allowDeferredSell"
+        },
+        {
+          "name": "attributeSet"
+        },
+        {
+          "name": "autoGenerateBOM"
+        },
+        {
+          "name": "billOfMaterials"
+        },
+        {
+          "name": "bom"
+        },
+        {
+          "name": "calculated"
+        },
+        {
+          "name": "client",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "complementaryProducts"
+        },
+        {
+          "name": "deferredSellMaxDays"
+        },
+        {
+          "name": "deliveryMode"
+        },
+        {
+          "name": "deliveryModeInLayaway"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "discontinued"
+        },
+        {
+          "name": "discontinuedBy"
+        },
+        {
+          "name": "documentNote"
+        },
+        {
+          "name": "editablePrice"
+        },
+        {
+          "name": "epc"
+        },
+        {
+          "name": "excludeRelatedProductCategories"
+        },
+        {
+          "name": "excludeRelatedProducts"
+        },
+        {
+          "name": "generic"
+        },
+        {
+          "name": "genericProduct"
+        },
+        {
+          "name": "groupedProduct"
+        },
+        {
+          "name": "isOTF"
+        },
+        {
+          "name": "linkedToProduct"
+        },
+        {
+          "name": "multiSelectable"
+        },
+        {
+          "name": "multiUPC"
+        },
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "newEquivalentProduct"
+        },
+        {
+          "name": "obdestCcharacteristic"
+        },
+        {
+          "name": "obdestEnabled"
+        },
+        {
+          "name": "obdestRcharacteristic"
+        },
+        {
+          "name": "overdueReturnDays"
+        },
+        {
+          "name": "pimUrl"
+        },
+        {
+          "name": "plmStatus"
+        },
+        {
+          "name": "priceRuleBased"
+        },
+        {
+          "name": "printDescription"
+        },
+        {
+          "name": "printDetailsOnInvoice"
+        },
+        {
+          "name": "printDetailsOnPickList"
+        },
+        {
+          "name": "printPrice"
+        },
+        {
+          "name": "printServices"
+        },
+        {
+          "name": "productActCategory"
+        },
+        {
+          "name": "productCategory",
+          "required": true
+        },
+        {
+          "name": "productPurchasing"
+        },
+        {
+          "name": "productSubtype"
+        },
+        {
+          "name": "productType"
+        },
+        {
+          "name": "production"
+        },
+        {
+          "name": "productsOfTheKit"
+        },
+        {
+          "name": "proposalType"
+        },
+        {
+          "name": "purchased"
+        },
+        {
+          "name": "quantityRule"
+        },
+        {
+          "name": "quantityType"
+        },
+        {
+          "name": "quantityVariable"
+        },
+        {
+          "name": "relatedProductCategories"
+        },
+        {
+          "name": "relevantCharacteristicsFilter"
+        },
+        {
+          "name": "returnable"
+        },
+        {
+          "name": "salesUnitFactor"
+        },
+        {
+          "name": "scale"
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "serviceFollowUpDocumentMode"
+        },
+        {
+          "name": "serviceFollowUpEntryMode"
+        },
+        {
+          "name": "sgtin"
+        },
+        {
+          "name": "shelfDepth"
+        },
+        {
+          "name": "shelfHeight"
+        },
+        {
+          "name": "shelfWidth"
+        },
+        {
+          "name": "showCharactDesc"
+        },
+        {
+          "name": "showStock"
+        },
+        {
+          "name": "skipApplyPromotion"
+        },
+        {
+          "name": "sku"
+        },
+        {
+          "name": "sold"
+        },
+        {
+          "name": "specialUse"
+        },
+        {
+          "name": "stocked"
+        },
+        {
+          "name": "substituteProducts"
+        },
+        {
+          "name": "summaryLevel"
+        },
+        {
+          "name": "taxCategory",
+          "required": true
+        },
+        {
+          "name": "translations"
+        },
+        {
+          "name": "uniquePerDocument"
+        },
+        {
+          "name": "unitsPerPallet"
+        },
+        {
+          "name": "uom",
+          "required": true
+        },
+        {
+          "name": "uomForWeight"
+        },
+        {
+          "name": "upcEAN"
+        },
+        {
+          "name": "verified"
+        },
+        {
+          "name": "versionNo"
+        },
+        {
+          "name": "volume"
+        },
+        {
+          "name": "weight"
+        }
+      ],
+      "identifiers": [
+        "client",
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "aliases",
+        "allowAnonymousSale",
+        "allowDeferredSell",
+        "attributeSet",
+        "autoGenerateBOM",
+        "billOfMaterials",
+        "bom",
+        "calculated",
+        "client",
+        "complementaryProducts",
+        "deferredSellMaxDays",
+        "deliveryMode",
+        "deliveryModeInLayaway",
+        "description",
+        "discontinued",
+        "discontinuedBy",
+        "documentNote",
+        "editablePrice",
+        "epc",
+        "excludeRelatedProductCategories",
+        "excludeRelatedProducts",
+        "generic",
+        "genericProduct",
+        "groupedProduct",
+        "isOTF",
+        "linkedToProduct",
+        "multiSelectable",
+        "multiUPC",
+        "name",
+        "newEquivalentProduct",
+        "obdestCcharacteristic",
+        "obdestEnabled",
+        "obdestRcharacteristic",
+        "overdueReturnDays",
+        "pimUrl",
+        "plmStatus",
+        "priceRuleBased",
+        "printDescription",
+        "printDetailsOnInvoice",
+        "printDetailsOnPickList",
+        "printPrice",
+        "printServices",
+        "productActCategory",
+        "productCategory",
+        "productPurchasing",
+        "productSubtype",
+        "productType",
+        "production",
+        "productsOfTheKit",
+        "proposalType",
+        "purchased",
+        "quantityRule",
+        "quantityType",
+        "quantityVariable",
+        "relatedProductCategories",
+        "relevantCharacteristicsFilter",
+        "returnable",
+        "salesUnitFactor",
+        "scale",
+        "searchKey",
+        "serviceFollowUpDocumentMode",
+        "serviceFollowUpEntryMode",
+        "sgtin",
+        "shelfDepth",
+        "shelfHeight",
+        "shelfWidth",
+        "showCharactDesc",
+        "showStock",
+        "skipApplyPromotion",
+        "sku",
+        "sold",
+        "specialUse",
+        "stocked",
+        "substituteProducts",
+        "summaryLevel",
+        "taxCategory",
+        "translations",
+        "uniquePerDocument",
+        "unitsPerPallet",
+        "uom",
+        "uomForWeight",
+        "upcEAN",
+        "verified",
+        "versionNo",
+        "volume",
+        "weight"
+      ]
+    }
+  },
+  "ProductBundle": {
+    "description": "Mapping of the product bundle entity for export via the Business API.",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "categories"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "endingDate"
+        },
+        {
+          "name": "groups"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "product"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "sequenceNumber"
+        },
+        {
+          "name": "startingDate"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active",
+          "required": true
+        },
+        {
+          "name": "categories",
+          "required": true
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "endingDate"
+        },
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "product",
+          "required": true
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "sequenceNumber",
+          "required": true
+        },
+        {
+          "name": "startingDate",
+          "required": true
+        }
+      ],
+      "identifiers": [
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "categories",
+        "client",
+        "description",
+        "endingDate",
+        "name",
+        "product",
+        "searchKey",
+        "sequenceNumber",
+        "startingDate"
+      ]
+    }
+  },
+  "ProductCategory": {
+    "description": "Product Category is an entity that groups together different products with the aim of helping in their management and analysis.",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "default"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "mandatoryIssuance"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "plannedMargin"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "summaryLevel"
+        },
+        {
+          "name": "translations"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "client",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "default"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "mainProductCategory"
+        },
+        {
+          "name": "mandatoryIssuance"
+        },
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "plannedMargin",
+          "required": true
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "summaryLevel"
+        },
+        {
+          "name": "translations"
+        }
+      ],
+      "identifiers": [
+        "client",
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "client",
+        "default",
+        "description",
+        "mainProductCategory",
+        "mandatoryIssuance",
+        "name",
+        "plannedMargin",
+        "searchKey",
+        "summaryLevel",
+        "translations"
+      ]
+    }
+  },
+  "ProductCharacteristic": {
+    "description": "",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "assignValuesByOrg"
+        },
+        {
+          "name": "characteristicValues"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "explodeConfigurationTab"
+        },
+        {
+          "name": "filterOnReports"
+        },
+        {
+          "name": "filterOnWebPOS"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "translations"
+        },
+        {
+          "name": "useOnReports"
+        },
+        {
+          "name": "useOnWebPOS"
+        },
+        {
+          "name": "variant"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active",
+          "required": true
+        },
+        {
+          "name": "assignValuesByOrg"
+        },
+        {
+          "name": "characteristicValues"
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "explodeConfigurationTab"
+        },
+        {
+          "name": "filterOnReports"
+        },
+        {
+          "name": "filterOnWebPOS"
+        },
+        {
+          "name": "name",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "organization",
+          "required": true
+        },
+        {
+          "name": "translations"
+        },
+        {
+          "name": "useOnReports"
+        },
+        {
+          "name": "useOnWebPOS"
+        },
+        {
+          "name": "variant"
+        }
+      ],
+      "identifiers": [
+        "name"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "assignValuesByOrg",
+        "characteristicValues",
+        "client",
+        "description",
+        "explodeConfigurationTab",
+        "filterOnReports",
+        "filterOnWebPOS",
+        "name",
+        "organization",
+        "translations",
+        "useOnReports",
+        "useOnWebPOS",
+        "variant"
+      ]
+    }
+  },
+  "ProductListsForLabels": {
+    "description": "Endpoint for getting information of the Product Lists for Labels entity in Openbravo",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "notificationDate"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "printDate"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "searchKey"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "notificationDate"
+        },
+        {
+          "name": "printDate"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "searchKey"
+        }
+      ],
+      "identifiers": []
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "client",
+        "name",
+        "notificationDate",
+        "printDate",
+        "products",
+        "searchKey"
+      ]
+    }
+  },
+  "ProductMedia": {
+    "description": "Media associated to a Product",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "mediaSizeList"
+        },
+        {
+          "name": "mediaType"
+        },
+        {
+          "name": "previewMediaUrl"
+        },
+        {
+          "name": "product"
+        },
+        {
+          "name": "sequenceNumber"
+        },
+        {
+          "name": "visibilityList"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "mediaSizeList"
+        },
+        {
+          "name": "mediaType",
+          "required": true
+        },
+        {
+          "name": "organization",
+          "identifier": true
+        },
+        {
+          "name": "previewMediaUrl"
+        },
+        {
+          "name": "product",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "sequenceNumber",
+          "identifier": true
+        },
+        {
+          "name": "visibilityList"
+        }
+      ],
+      "identifiers": [
+        "organization",
+        "product",
+        "sequenceNumber"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "mediaSizeList",
+        "mediaType",
+        "organization",
+        "previewMediaUrl",
+        "product",
+        "sequenceNumber",
+        "visibilityList"
+      ]
+    }
+  },
+  "ProductPrice": {
+    "description": "List of the Prices of the Products",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "aum"
+        },
+        {
+          "name": "cost"
+        },
+        {
+          "name": "listPrice"
+        },
+        {
+          "name": "mappingLabelAttribute1"
+        },
+        {
+          "name": "mappingLabelAttribute2"
+        },
+        {
+          "name": "mappingLabelAttribute3"
+        },
+        {
+          "name": "maxPrice"
+        },
+        {
+          "name": "priceLimit"
+        },
+        {
+          "name": "priceList"
+        },
+        {
+          "name": "printPriceForProductLabels"
+        },
+        {
+          "name": "printPriceForTemplates"
+        },
+        {
+          "name": "printPriceForWebPos"
+        },
+        {
+          "name": "printingLabelAttribute1"
+        },
+        {
+          "name": "product"
+        },
+        {
+          "name": "productPriceExceptions"
+        },
+        {
+          "name": "promotionalOnlyProduct"
+        },
+        {
+          "name": "skipApplyPromotion"
+        },
+        {
+          "name": "taxCategory"
+        },
+        {
+          "name": "unitPrice"
+        }
+      ]
+    },
+    "import": {
+      "fields": [],
+      "identifiers": []
+    },
+    "mergeable": {
+      "fields": []
+    }
+  },
+  "ProductSubtype": {
+    "description": "Product Subtype allows for more specificity in Product Type configuration.",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "allocationType"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "forcedInReturns"
+        },
+        {
+          "name": "includedInProductPrice"
+        },
+        {
+          "name": "linkedToProduct"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "priceCalculation"
+        },
+        {
+          "name": "quantityRule"
+        },
+        {
+          "name": "searchKey"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active",
+          "required": true
+        },
+        {
+          "name": "allocationType",
+          "required": true
+        },
+        {
+          "name": "client",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "forcedInReturns",
+          "required": true
+        },
+        {
+          "name": "includedInProductPrice",
+          "required": true
+        },
+        {
+          "name": "linkedToProduct",
+          "required": true
+        },
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "organization",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "priceCalculation",
+          "required": true
+        },
+        {
+          "name": "quantityRule",
+          "required": true
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        }
+      ],
+      "identifiers": [
+        "client",
+        "organization",
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "allocationType",
+        "client",
+        "description",
+        "forcedInReturns",
+        "includedInProductPrice",
+        "linkedToProduct",
+        "name",
+        "organization",
+        "priceCalculation",
+        "quantityRule",
+        "searchKey"
+      ]
+    }
+  },
+  "Promotion": {
+    "description": "Entity that describes the discounts and promotions that allow to adjust prices based on different rules.",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "allowInNegativeLines"
+        },
+        {
+          "name": "allowIncreaseLinePrice"
+        },
+        {
+          "name": "allowMultipleInstances"
+        },
+        {
+          "name": "amount"
+        },
+        {
+          "name": "applicationMethod"
+        },
+        {
+          "name": "applyAfterAutomaticDiscounts"
+        },
+        {
+          "name": "applyMinCouponAmount"
+        },
+        {
+          "name": "applyNextDiscount"
+        },
+        {
+          "name": "applyOnce"
+        },
+        {
+          "name": "applyToProductsUpToTheMaxQuantity"
+        },
+        {
+          "name": "approvalRequired"
+        },
+        {
+          "name": "availability"
+        },
+        {
+          "name": "businessPartnerCategories"
+        },
+        {
+          "name": "businessPartnerSets"
+        },
+        {
+          "name": "buyXGiftYSubtype"
+        },
+        {
+          "name": "characteristics"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "comboFamilies"
+        },
+        {
+          "name": "comboFixedPrice"
+        },
+        {
+          "name": "countAmountChoice"
+        },
+        {
+          "name": "crmPropertyConditions"
+        },
+        {
+          "name": "currency"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "discountAmount"
+        },
+        {
+          "name": "discountPercentage"
+        },
+        {
+          "name": "discountType"
+        },
+        {
+          "name": "displayInPrintedProductLabel"
+        },
+        {
+          "name": "displayInProductCard"
+        },
+        {
+          "name": "displayInSearchAndBrowse"
+        },
+        {
+          "name": "displayInTicketLine"
+        },
+        {
+          "name": "displayInTicketTotal"
+        },
+        {
+          "name": "displayInTicketTotalApplied"
+        },
+        {
+          "name": "distributeBetweenLines"
+        },
+        {
+          "name": "endingDate"
+        },
+        {
+          "name": "excludedCharacteristics"
+        },
+        {
+          "name": "fixedPrice"
+        },
+        {
+          "name": "freeProducts"
+        },
+        {
+          "name": "includePriceLists"
+        },
+        {
+          "name": "includedBPCategories"
+        },
+        {
+          "name": "includedBusinessPartners"
+        },
+        {
+          "name": "includedCharacteristics"
+        },
+        {
+          "name": "includedExternalBusinessPartners"
+        },
+        {
+          "name": "includedLoyaltyPrograms"
+        },
+        {
+          "name": "includedOrganizations"
+        },
+        {
+          "name": "includedProductCategories"
+        },
+        {
+          "name": "includedProducts"
+        },
+        {
+          "name": "includedRoles"
+        },
+        {
+          "name": "incompatibleDiscounts"
+        },
+        {
+          "name": "isCoupon"
+        },
+        {
+          "name": "isOTFCoupon"
+        },
+        {
+          "name": "limitCriteriaOrder"
+        },
+        {
+          "name": "limitInstances"
+        },
+        {
+          "name": "limitPerOrder"
+        },
+        {
+          "name": "lineFinalAmount"
+        },
+        {
+          "name": "loyaltyPrograms"
+        },
+        {
+          "name": "maxQuantity"
+        },
+        {
+          "name": "maxX"
+        },
+        {
+          "name": "minQuantity"
+        },
+        {
+          "name": "minX"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "obcomopPriceRule"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "organizations"
+        },
+        {
+          "name": "otfApplyMinCouponAmount"
+        },
+        {
+          "name": "otfTotalReceipt"
+        },
+        {
+          "name": "percentage"
+        },
+        {
+          "name": "price"
+        },
+        {
+          "name": "priceAdjustmentAmount"
+        },
+        {
+          "name": "priceAdjustmentFixedPrice"
+        },
+        {
+          "name": "priceAdjustmentPercentage"
+        },
+        {
+          "name": "priceAdjustmentScope"
+        },
+        {
+          "name": "priceAdjustmentType"
+        },
+        {
+          "name": "priceLists"
+        },
+        {
+          "name": "priceScales"
+        },
+        {
+          "name": "printedName"
+        },
+        {
+          "name": "priority"
+        },
+        {
+          "name": "priorityRule"
+        },
+        {
+          "name": "productCategories"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "startingDate"
+        },
+        {
+          "name": "subtype"
+        },
+        {
+          "name": "totalDiscountAmount"
+        },
+        {
+          "name": "totalPercentageDiscount"
+        },
+        {
+          "name": "totalReceiptAmount"
+        },
+        {
+          "name": "uPC"
+        },
+        {
+          "name": "userDefinedLineAmountLogic"
+        },
+        {
+          "name": "verifyPriceLimit"
+        },
+        {
+          "name": "xNumberOfItems"
+        },
+        {
+          "name": "xUnits"
+        },
+        {
+          "name": "yUnits"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "allowInNegativeLines"
+        },
+        {
+          "name": "allowIncreaseLinePrice"
+        },
+        {
+          "name": "allowMultipleInstances"
+        },
+        {
+          "name": "amount"
+        },
+        {
+          "name": "applicationMethod"
+        },
+        {
+          "name": "applyAfterAutomaticDiscounts"
+        },
+        {
+          "name": "applyMinCouponAmount"
+        },
+        {
+          "name": "applyNextDiscount"
+        },
+        {
+          "name": "applyOnce"
+        },
+        {
+          "name": "applyToProductsUpToTheMaxQuantity"
+        },
+        {
+          "name": "approvalRequired"
+        },
+        {
+          "name": "availability"
+        },
+        {
+          "name": "businessPartnerCategories"
+        },
+        {
+          "name": "businessPartnerSets"
+        },
+        {
+          "name": "buyXGiftYSubtype"
+        },
+        {
+          "name": "characteristics"
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "comboFamilies"
+        },
+        {
+          "name": "comboFixedPrice"
+        },
+        {
+          "name": "countAmountChoice"
+        },
+        {
+          "name": "crmPropertyConditions"
+        },
+        {
+          "name": "currency"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "discountAmount"
+        },
+        {
+          "name": "discountPercentage"
+        },
+        {
+          "name": "discountType",
+          "required": true
+        },
+        {
+          "name": "displayInPrintedProductLabel"
+        },
+        {
+          "name": "displayInProductCard"
+        },
+        {
+          "name": "displayInSearchAndBrowse"
+        },
+        {
+          "name": "displayInTicketLine"
+        },
+        {
+          "name": "displayInTicketTotal"
+        },
+        {
+          "name": "displayInTicketTotalApplied"
+        },
+        {
+          "name": "distributeBetweenLines"
+        },
+        {
+          "name": "endingDate"
+        },
+        {
+          "name": "excludedCharacteristics",
+          "required": true
+        },
+        {
+          "name": "fixedPrice"
+        },
+        {
+          "name": "freeProducts"
+        },
+        {
+          "name": "includePriceLists",
+          "required": true
+        },
+        {
+          "name": "includedBPCategories",
+          "required": true
+        },
+        {
+          "name": "includedBusinessPartners",
+          "required": true
+        },
+        {
+          "name": "includedCharacteristics",
+          "required": true
+        },
+        {
+          "name": "includedExternalBusinessPartners",
+          "required": true
+        },
+        {
+          "name": "includedLoyaltyPrograms",
+          "required": true
+        },
+        {
+          "name": "includedOrganizations",
+          "required": true
+        },
+        {
+          "name": "includedProductCategories",
+          "required": true
+        },
+        {
+          "name": "includedProducts",
+          "required": true
+        },
+        {
+          "name": "includedRoles",
+          "required": true
+        },
+        {
+          "name": "incompatibleDiscounts"
+        },
+        {
+          "name": "isCoupon"
+        },
+        {
+          "name": "isOTFCoupon"
+        },
+        {
+          "name": "limitCriteriaOrder"
+        },
+        {
+          "name": "limitInstances"
+        },
+        {
+          "name": "limitPerOrder"
+        },
+        {
+          "name": "lineFinalAmount"
+        },
+        {
+          "name": "loyaltyPrograms"
+        },
+        {
+          "name": "maxQuantity"
+        },
+        {
+          "name": "maxX"
+        },
+        {
+          "name": "minQuantity"
+        },
+        {
+          "name": "minX"
+        },
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "obcomopPriceRule",
+          "required": true
+        },
+        {
+          "name": "organizations"
+        },
+        {
+          "name": "otfApplyMinCouponAmount"
+        },
+        {
+          "name": "otfTotalReceipt"
+        },
+        {
+          "name": "percentage"
+        },
+        {
+          "name": "price"
+        },
+        {
+          "name": "priceAdjustmentAmount"
+        },
+        {
+          "name": "priceAdjustmentFixedPrice"
+        },
+        {
+          "name": "priceAdjustmentPercentage"
+        },
+        {
+          "name": "priceAdjustmentScope"
+        },
+        {
+          "name": "priceAdjustmentType"
+        },
+        {
+          "name": "priceLists"
+        },
+        {
+          "name": "priceScales"
+        },
+        {
+          "name": "printedName"
+        },
+        {
+          "name": "priority"
+        },
+        {
+          "name": "priorityRule"
+        },
+        {
+          "name": "productCategories"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "startingDate",
+          "required": true
+        },
+        {
+          "name": "subtype"
+        },
+        {
+          "name": "totalDiscountAmount"
+        },
+        {
+          "name": "totalPercentageDiscount"
+        },
+        {
+          "name": "totalReceiptAmount"
+        },
+        {
+          "name": "uPC"
+        },
+        {
+          "name": "userDefinedLineAmountLogic"
+        },
+        {
+          "name": "verifyPriceLimit"
+        },
+        {
+          "name": "xNumberOfItems"
+        },
+        {
+          "name": "xUnits"
+        },
+        {
+          "name": "yUnits"
+        }
+      ],
+      "identifiers": [
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "allowInNegativeLines",
+        "allowIncreaseLinePrice",
+        "allowMultipleInstances",
+        "amount",
+        "applicationMethod",
+        "applyAfterAutomaticDiscounts",
+        "applyMinCouponAmount",
+        "applyNextDiscount",
+        "applyOnce",
+        "applyToProductsUpToTheMaxQuantity",
+        "approvalRequired",
+        "availability",
+        "businessPartnerCategories",
+        "businessPartnerSets",
+        "buyXGiftYSubtype",
+        "characteristics",
+        "client",
+        "comboFamilies",
+        "comboFixedPrice",
+        "countAmountChoice",
+        "crmPropertyConditions",
+        "currency",
+        "description",
+        "discountAmount",
+        "discountPercentage",
+        "discountType",
+        "displayInPrintedProductLabel",
+        "displayInProductCard",
+        "displayInSearchAndBrowse",
+        "displayInTicketLine",
+        "displayInTicketTotal",
+        "displayInTicketTotalApplied",
+        "distributeBetweenLines",
+        "endingDate",
+        "excludedCharacteristics",
+        "fixedPrice",
+        "freeProducts",
+        "includePriceLists",
+        "includedBPCategories",
+        "includedBusinessPartners",
+        "includedCharacteristics",
+        "includedExternalBusinessPartners",
+        "includedLoyaltyPrograms",
+        "includedOrganizations",
+        "includedProductCategories",
+        "includedProducts",
+        "includedRoles",
+        "incompatibleDiscounts",
+        "isCoupon",
+        "isOTFCoupon",
+        "limitCriteriaOrder",
+        "limitInstances",
+        "limitPerOrder",
+        "lineFinalAmount",
+        "loyaltyPrograms",
+        "maxQuantity",
+        "maxX",
+        "minQuantity",
+        "minX",
+        "name",
+        "obcomopPriceRule",
+        "organizations",
+        "otfApplyMinCouponAmount",
+        "otfTotalReceipt",
+        "percentage",
+        "price",
+        "priceAdjustmentAmount",
+        "priceAdjustmentFixedPrice",
+        "priceAdjustmentPercentage",
+        "priceAdjustmentScope",
+        "priceAdjustmentType",
+        "priceLists",
+        "priceScales",
+        "printedName",
+        "priority",
+        "priorityRule",
+        "productCategories",
+        "products",
+        "searchKey",
+        "startingDate",
+        "subtype",
+        "totalDiscountAmount",
+        "totalPercentageDiscount",
+        "totalReceiptAmount",
+        "uPC",
+        "userDefinedLineAmountLogic",
+        "verifyPriceLimit",
+        "xNumberOfItems",
+        "xUnits",
+        "yUnits"
+      ]
+    }
+  },
+  "ReturnReason": {
+    "description": "Information about the return reasons when returning goods to the vendor or from the customer.",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "returnFromCustomer"
+        },
+        {
+          "name": "returnToVendor"
+        },
+        {
+          "name": "searchKey"
+        }
+      ]
+    },
+    "import": {
+      "fields": [],
+      "identifiers": []
+    },
+    "mergeable": {
+      "fields": []
+    }
+  },
+  "TaxRate": {
+    "description": "",
+    "export": {
+      "fields": [
+        {
+          "name": "docTaxAmount"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "rate"
+        },
+        {
+          "name": "searchKey"
+        },
+        {
+          "name": "taxCategory"
+        },
+        {
+          "name": "taxExempt"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "baseAmount"
+        },
+        {
+          "name": "dateFrom",
+          "required": true
+        },
+        {
+          "name": "destinationCountry"
+        },
+        {
+          "name": "destinationRegion"
+        },
+        {
+          "name": "docTaxAmount"
+        },
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "organization",
+          "identifier": true
+        },
+        {
+          "name": "originCountry"
+        },
+        {
+          "name": "originRegion"
+        },
+        {
+          "name": "rate",
+          "required": true
+        },
+        {
+          "name": "salesPurchaseType"
+        },
+        {
+          "name": "searchKey",
+          "identifier": true,
+          "required": true
+        },
+        {
+          "name": "summaryLevel"
+        },
+        {
+          "name": "taxCategory",
+          "required": true
+        },
+        {
+          "name": "taxExempt"
+        }
+      ],
+      "identifiers": [
+        "organization",
+        "searchKey"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "baseAmount",
+        "dateFrom",
+        "destinationCountry",
+        "destinationRegion",
+        "docTaxAmount",
+        "name",
+        "organization",
+        "originCountry",
+        "originRegion",
+        "rate",
+        "salesPurchaseType",
+        "searchKey",
+        "summaryLevel",
+        "taxCategory",
+        "taxExempt"
+      ]
+    }
+  },
+  "User": {
+    "description": "User that has access to the system",
+    "export": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "businessPartnerCommercialName"
+        },
+        {
+          "name": "client"
+        },
+        {
+          "name": "defaultLanguage"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "email"
+        },
+        {
+          "name": "firstname"
+        },
+        {
+          "name": "isSalesRepresentative"
+        },
+        {
+          "name": "lastname"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "oauth2TokenValue"
+        },
+        {
+          "name": "organization"
+        },
+        {
+          "name": "position"
+        },
+        {
+          "name": "roles"
+        },
+        {
+          "name": "terminals"
+        },
+        {
+          "name": "username"
+        }
+      ]
+    },
+    "import": {
+      "fields": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "businessPartnerCommercialName"
+        },
+        {
+          "name": "client",
+          "required": true
+        },
+        {
+          "name": "defaultLanguage"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "email"
+        },
+        {
+          "name": "expiredpassword"
+        },
+        {
+          "name": "firstname"
+        },
+        {
+          "name": "isSalesRepresentative"
+        },
+        {
+          "name": "lastname"
+        },
+        {
+          "name": "name",
+          "required": true
+        },
+        {
+          "name": "oauth2TokenValue",
+          "identifier": true
+        },
+        {
+          "name": "organization",
+          "required": true
+        },
+        {
+          "name": "password"
+        },
+        {
+          "name": "position"
+        },
+        {
+          "name": "roles"
+        },
+        {
+          "name": "terminals"
+        },
+        {
+          "name": "username",
+          "identifier": true,
+          "required": true
+        }
+      ],
+      "identifiers": [
+        "oauth2TokenValue",
+        "username"
+      ]
+    },
+    "mergeable": {
+      "fields": [
+        "active",
+        "businessPartnerCommercialName",
+        "client",
+        "defaultLanguage",
+        "description",
+        "email",
+        "expiredpassword",
+        "firstname",
+        "isSalesRepresentative",
+        "lastname",
+        "name",
+        "oauth2TokenValue",
+        "organization",
+        "password",
+        "position",
+        "roles",
+        "terminals",
+        "username"
+      ]
+    }
+  }
+}

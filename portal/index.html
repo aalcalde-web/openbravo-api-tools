@@ -1,32 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orisha Commerce Tools</title>
+  <title>Orisha Commerce - API Tools</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
   <header class="header">
-    <a class="header-logo" id="home-link">
-      <span class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-      <span class="logo-title">Orisha Commerce Tools</span>
+    <a class="header-logo" href="#" id="nav-home">
+      <span class="logo-icon">🏠</span>
     </a>
-    <button class="menu-toggle" id="menu-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-    <nav class="nav" id="nav"></nav>
+    <nav class="nav" id="nav">
+      <a class="nav-item" href="../api-field-reference/public/index.html" data-nav="true">📦 Field Reference</a>
+      <a class="nav-item" href="../undocumented-fields/public/index.html" data-nav="true">📋 Undocumented</a>
+      <a class="nav-item" href="#" id="nav-tools">🛠️ Tools</a>
+      <a class="nav-item" href="../get-to-post-converter/public/index.html" data-nav="true">🔄 GET→POST</a>
+    </nav>
   </header>
 
   <main class="main">
-    <div class="welcome" id="welcome">
-      <span class="welcome-icon">🛠️</span>
-      <h2>Orisha Commerce Tools</h2>
-      <p>Select a tool from the menu above</p>
+    <!-- Home -->
+    <div class="page" id="page-home">
+      <div class="home">
+        <h1>Orisha Commerce</h1>
+        <p class="home-subtitle">API Documentation & Analysis</p>
+        <div class="home-cards">
+          <div class="home-card" data-goto="nav-field-ref">
+            <span class="home-card-icon">📦</span>
+            <h3>Field Reference</h3>
+            <p>Referencia interactiva de campos para las APIs documentadas.</p>
+          </div>
+          <div class="home-card" data-goto="nav-undoc">
+            <span class="home-card-icon">📋</span>
+            <h3>Undocumented Fields</h3>
+            <p>Campos encontrados en código pero ausentes en la documentación.</p>
+          </div>
+          <div class="home-card" data-goto="nav-tools">
+            <span class="home-card-icon">🛠️</span>
+            <h3>Analysis Tools</h3>
+            <p>Ejecuta análisis automáticos sobre cualquier API del proyecto.</p>
+          </div>
+          <div class="home-card" data-goto="nav-converter">
+            <span class="home-card-icon">🔄</span>
+            <h3>GET → POST/PATCH</h3>
+            <p>Convierte JSON de GET a formato válido para POST o PATCH.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <iframe class="content-frame hidden" id="content-frame"></iframe>
+
+    <!-- Tools dashboard -->
+    <div class="page hidden" id="page-tools">
+      <div class="dashboard">
+        <div class="dashboard-header">
+          <h1>🛠️ Analysis Tools</h1>
+          <p>Selecciona herramienta, categoría y API</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title"><span class="step-num">1</span> Herramienta</h2>
+          <div class="tools-row">
+            <label class="tool-card">
+              <input type="radio" name="tool" value="undocumented" hidden>
+              <span class="tool-icon">🔍</span>
+              <div class="tool-info">
+                <h3>Undocumented Fields</h3>
+                <p>Campos en código ausentes en Swagger.</p>
+              </div>
+            </label>
+            <label class="tool-card">
+              <input type="radio" name="tool" value="description" hidden>
+              <span class="tool-icon">📝</span>
+              <div class="tool-info">
+                <h3>Description Analyzer</h3>
+                <p>Compara descripciones Swagger vs código.</p>
+              </div>
+            </label>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="step-num">2</span> API</h2>
+          <div class="selectors-row">
+            <div class="selector-group">
+              <label for="cat-select">Categoría</label>
+              <select id="cat-select">
+                <option value="">— Selecciona —</option>
+              </select>
+            </div>
+            <div class="selector-group grow">
+              <label for="api-select">API</label>
+              <select id="api-select" disabled>
+                <option value="">— Selecciona categoría —</option>
+              </select>
+            </div>
+          </div>
+          <div class="api-info hidden" id="api-info">
+            <div class="api-info-name" id="info-name"></div>
+            <div class="api-info-module" id="info-module"></div>
+            <div class="api-info-tags" id="info-tags"></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <button class="btn-run" id="btn-run" disabled>▶ Ejecutar Análisis</button>
+        </section>
+
+        <section class="section hidden" id="results-section">
+          <div class="results-header" id="results-header"></div>
+          <div class="status" id="status">
+            <div class="spinner"></div>
+            <span id="status-text">Analizando...</span>
+          </div>
+          <div class="results hidden" id="results">
+            <div class="stats" id="stats"></div>
+            <button class="btn-download" id="btn-download">⬇ Descargar CSV</button>
+            <button class="btn-clear" id="btn-clear">✕ Limpiar</button>
+          </div>
+          <div class="error hidden" id="error"></div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Iframe -->
+    <iframe class="content-frame hidden" id="content-frame" name="content-frame"></iframe>
   </main>
 
-  <script src="js/projects.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
